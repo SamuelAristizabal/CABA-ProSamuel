@@ -10,12 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "match")
+@Table(name = "matches")
 public class Match {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idMatch;
 
     @Column(name = "date", nullable = false)
     private LocalDate date;
@@ -88,8 +88,8 @@ public class Match {
     // ==========================
     public Match() {}
 
-    public Match(Long id, LocalDate date, int time, String place, String state, String result) {
-        this.id = id;
+    public Match(Long idMatch, LocalDate date, int time, String place, String state, String result) {
+        this.idMatch = idMatch;
         this.date = date;
         this.time = time;
         this.place = place;
@@ -102,8 +102,8 @@ public class Match {
     // Getters y setters (generales)
     // ==========================
     
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getIdMatch() { return idMatch; }
+    public void setIdMatch(Long idMatch) { this.idMatch = idMatch; }
 
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }

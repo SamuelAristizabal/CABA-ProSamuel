@@ -19,6 +19,6 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
     // Optional<Medicion> findFirstByPacienteIdOrderByFechaDesc(Long pacienteId);
 
     // 🔹 Consulta nativa para mayor control
-    @Query(value = "SELECT * FROM match WHERE match_id = :pacienteId ORDER BY fecha DESC LIMIT 1", nativeQuery = true)
-    Optional<Match> findLastMedicionByPacienteId(@Param("pacienteId") Long pacienteId);
+    //@Query(value = "SELECT * FROM match WHERE match_id = :pacienteId ORDER BY fecha DESC LIMIT 1", nativeQuery = true)
+    //Optional<Match> findLastMedicionByPacienteId(@Param("pacienteId") Long pacienteId);
 }

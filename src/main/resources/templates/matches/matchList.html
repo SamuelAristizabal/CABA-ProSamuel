@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${title}">Partidos</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" th:href="@{/css/app.css}" />
+
+    <title th:text="${title}"></title>
+  </head>
+
+  <body>
+    <!-- Mensaje de éxito -->
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+      <span th:text="${successMessage}"></span>
+    </div>
+
+    <h1 th:text="${title}"></h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Lugar</th>
+          <th>Estado</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="m : ${matches}">
+          <td th:text="${m.idMatch}"></td>
+          <td th:text="${m.date}"></td>
+          <td th:text="${m.time}"></td>
+          <td th:text="${m.place}"></td>
+          <td th:text="${m.state}"></td>
+          <td th:text="${m.result}"></td>
+          <td>
+            <a
+              th:href="@{/matches/{id}(id=${m.idMatch})}"
+              class="btn btn-info btn-sm"
+              >Ver detalles</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a th:href="@{matches/form}">Nuevo Partido</a>
+    <a th:href="@{/}">Volver a Página Principal</a>
+  </body>
+</html>

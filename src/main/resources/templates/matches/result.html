@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title th:text="${title}">Resultado</title>
+  </head>
+  <body>
+    <h1 th:text="${title}"></h1>
+
+    <p><b>ID:</b> <span th:text="${match.idMatch}"></span></p>
+    <p><b>Fecha:</b> <span th:text="${match.date}"></span></p>
+    <p><b>Hora:</b> <span th:text="${match.time}"></span></p>
+    <p><b>Lugar:</b> <span th:text="${match.place}"></span></p>
+    <p><b>Estado:</b> <span th:text="${match.state}"></span></p>
+    <p><b>Resultado:</b> <span th:text="${match.result}"></span></p>
+
+    <a th:href="@{matches/form}">Nuevo Partido</a> |
+    <a th:href="@{matches/matchList}">Ver Todos</a>
+  </body>
+</html>

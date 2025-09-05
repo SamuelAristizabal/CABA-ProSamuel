@@ -1,3 +1,4 @@
+
 package com.caba.CABA_Pro.controllers;
 
 import org.springframework.stereotype.Controller;
@@ -15,33 +16,17 @@ public class HomeController {
 
     }
 
-    @GetMapping("/form")
-    public String form(Model model) {
+    //@GetMapping("/form")
+    //public String form(Model model) {
+//
+    //    model.addAttribute("title", "About Us - Online Store");
+    //    model.addAttribute("subtitle", "About Us");
+    //    model.addAttribute("description", "This is an about page ...");
+    //    model.addAttribute("author", "Developed by: Your Name");
+    //    return "home/form";
+//
+    //}
 
-        model.addAttribute("title", "About Us - Online Store");
-        model.addAttribute("subtitle", "About Us");
-        model.addAttribute("description", "This is an about page ...");
-        model.addAttribute("author", "Developed by: Your Name");
-        return "home/form";
-
-    }
-
-    @GetMapping("/productList")
-    public String productList(Model model) {
-
-        model.addAttribute("title", "Contacto - Online Store");
-
-        // Información de contacto dinámica
-        model.addAttribute("email", "info@miempresa.com");
-        model.addAttribute("phone", "+57 300 123 4567");
-        model.addAttribute("address", "Cra. 49 #7 Sur-50, Medellín, Colombia");
-
-        // Links de redes sociales
-        model.addAttribute("facebook", "https://facebook.com/miempresa");
-        model.addAttribute("twitter", "https://twitter.com/miempresa");
-        model.addAttribute("instagram", "https://instagram.com/miempresa");
-
-        return "home/productList";
-    }
 
 }
+    
