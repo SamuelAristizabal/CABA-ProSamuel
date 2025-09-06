@@ -1,43 +1,43 @@
 <!-- header -->
-
 <th:block th:fragment="header">
-  <nav
-    th:fragment="header"
-    class="navbar navbar-expand-lg navbar-dark bg-secondary py-4"
-  >
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">Online Store</a>
+      <a class="navbar-brand fw-bold" th:href="@{/}">CABA Pro</a>
 
       <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link active" th:href="@{/}">Home</a>
-
-          <a class="nav-link active" th:href="@{/about}">About</a>
-
-          <a class="nav-link active" th:href="@{/contact}">Contact</a>
-
-          <a class="nav-link active" th:href="@{/products}">Products</a>
-
-          <a class="nav-link active" th:href="@{/products/create}">Create</a>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" th:href="@{/}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/matches}">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/matches/form}">Create Match</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 
-  <header class="masthead bg-primary text-white text-center py-4">
-    <div class="container d-flex align-items-center flex-column">
-      <h2 th:text="${subtitle} ?: 'A Spring Boot EAFIT App'"></h2>
-    </div></header>
+  <!-- Masthead / Hero -->
+  <header class="bg-light text-dark text-center py-5 mb-4 shadow-sm">
+    <div class="container">
+      <h1 class="display-5 fw-bold" th:text="${title} ?: 'CABA Pro - Gestión de Partidos'"></h1>
+      <p class="lead" th:text="${subtitle} ?: 'Tu aplicación de administración de partidos de manera sencilla y rápida'"></p>
+    </div>
+  </header>
 </th:block>
