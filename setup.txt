@@ -1,0 +1,56 @@
+Para poder correr el proyecto es necesario contar con las versiones correctas de springboot y java.
+La versión de java usada para este proyecto es java 24.0.2 2025-07-15
+También es necesario contar con Springboot, Thymeleaf y H2, los cuales vienen incluidos desde el Spring Initialzr.
+
+Para poder correr el programa es necesario ir a la carpeta madre del proyecto (CABA-ProSamuel) y correr el siguiente comando:
+./mvnw spring-boot:run
+Esto permitirá hacer funcionar al servidor de springboot y que pueda cargar las vistas, modelos y la base de datos del proyecto.
+Para visualizarlo se debe abrir una pestaña del navegador de su preferencia (Google por ejemplo) e ingresar la siguiente ruta en el buscador:
+http://localhost:8080/
+Desde esta vista ya se puede hacer uso de la aplicación. Si se desea tener acceso a la base de datos es necesario ingresar la siguiente ruta en el navegador
+http://localhost:8080/h2-console
+Se solicitará los siguientes campos para permitir el acceso
+    URL JDBC: jdbc:h2:mem:cabapro
+    Nombre de usuario: sa
+    Contraseña:
+    El campo de la contraseña se deja vacío
+
+Requisitos previos
+    Para poder ejecutar el proyecto, es necesario tener las versiones correctas de Java y de las herramientas necesarias:
+    Java: versión 24.0.2 (2025-07-15) o superior.
+    Maven Wrapper (mvnw): incluido en el proyecto, no requiere instalación extra de Maven.
+    Spring Boot, Thymeleaf y H2 Database ya vienen configurados en este proyecto a través del Spring Initializr.
+
+Es necesario contar con la variable de entorno JAVA_HOME con la versión de Java instalada.
+
+Ejecución del proyecto
+    Hay que abrir una terminal (puede ser directamente la de su IDE) e ir a la carpeta raíz
+    cd CABA-ProSamuel
+
+    Luego es necesario copiar el siguiente comando en la terminal para iniciar el servidor
+    ./mvnw spring-boot:run
+    Esto hará funcionar el servidor y compilará el proyecto y cargará automáticamente:
+    - Las vistas (Thymeleaf).
+    - Los modelos y controladores.
+    - La base de datos en memoria H2.
+    - Acceso a la aplicación
+
+    Ya teniendo el servidor, hay que ir a un navegador (por ejemplo, Google) y escribir la siguiente url:
+    http://localhost:8080/
+    Ya con esto se puede mover por la aplicación y utilizar sus funciones.
+
+Acceso a la base de datos H2
+    El proyecto cuenta con una base de datos H2. Para acceder a ella:
+    En el navegador, en una pestaña diferente si se desea, ir a
+    http://localhost:8080/h2-console
+
+    Para tener ingreso a la base de datos es necesario llenar los siguientes campos:
+    URL JDBC: jdbc:h2:mem:cabapro
+    Nombre de usuario: sa
+    Contraseña: (dejar vacío)
+
+    Con esto hacer clic en Connect.
+    Desde aquí ya se pueden ver las tablas, ejecutar consultas SQL y ver que los datos se guarden
+
+Notas adicionales
+    Para detener el servidor, presione CTRL + C en la terminal donde se ejecuta.
